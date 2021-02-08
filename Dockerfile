@@ -24,6 +24,8 @@ RUN curl http://pecl.php.net/get/ssh2-1.2.tgz -o ssh2.tgz && \
     docker-php-ext-enable ssh2 && \
     rm -rf ssh2.tgz
 
+COPY php.ini /usr/local/etc/php/conf.d/local.ini
+
 # Install extensions
 RUN docker-php-ext-install pdo_mysql pdo_pgsql exif pcntl zip gd
 
